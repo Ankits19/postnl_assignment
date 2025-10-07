@@ -1,0 +1,17 @@
+name: Deploy AWS Infra
+on:
+  push:
+    branches:
+      - feature/task_assignment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Echo
+        run: 
+          echo "I am working"
