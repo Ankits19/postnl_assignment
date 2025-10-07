@@ -31,5 +31,4 @@ jobs:
 
       - name: Deploy Infra
         run: |
-          npx tsc
           node dist/infra/index.js
