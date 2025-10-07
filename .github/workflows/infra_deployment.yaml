@@ -32,6 +32,4 @@ jobs:
 
       - name: Deploy Infra
         run: |
-          pwd
-          ls
-          cd infra && npx ts-node index.ts
+          npx ts-node index.ts
