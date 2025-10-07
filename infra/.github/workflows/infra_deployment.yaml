@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - feature/task_assignment
-
+      
 jobs:
   deploy:
     runs-on: ubuntu-latest
