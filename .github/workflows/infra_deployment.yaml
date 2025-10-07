@@ -30,6 +30,6 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Deploy Infra
-        working-directory: ./infra
         run: |
-          npx ts-node index.ts
+          npx tsc
+          node dist/infra/index.js
