@@ -1,9 +1,10 @@
 name: Deploy AWS Infra
+
 on:
   push:
     branches:
       - feature/task_assignment
-      
+
 jobs:
   deploy_infra:
     runs-on: ubuntu-latest
@@ -18,16 +19,17 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: |
-          cd infra && npm install
-        
+        working-directory: ./infra
+        run: npm install
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ vars.AWS_REGION }}        
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Deploy Infra
+        working-directory: ./infra
         run: |
-          npx ts-node index.ts
+          node --loader ts-node/esm index.ts
