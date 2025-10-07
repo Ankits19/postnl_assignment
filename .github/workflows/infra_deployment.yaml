@@ -5,7 +5,7 @@ on:
       - feature/task_assignment
       
 jobs:
-  deploy:
+  deploy_infra:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,8 +33,5 @@ jobs:
       - name: Deploy Infra
         run: |
           pwd
+          ls
           npx ts-node index.ts
-        working-directory: infra
-
-        
-
