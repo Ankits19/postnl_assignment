@@ -22,7 +22,6 @@ jobs:
         working-directory: ./infra
         run: |
           npm install
-          npm install typescript ts-node @types/node aws-sdk
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -32,5 +31,6 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Deploy Infra
+        working-directory: ./infra
         run: |
-          npx ts-node infra/index.ts
+          npx ts-node index.ts

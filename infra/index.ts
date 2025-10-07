@@ -7,7 +7,7 @@ import { createLambdaRole } from "./iam.ts";
         const queueUrl = await createQueue("DistanceBufferQueue");
         const queueArn = await getQueueArn(queueUrl);
 
-        const roleArn = await createLambdaRole("LambdaSQSAcessRole", queueArn);
+        const roleArn = await createLambdaRole("LambdaRole", queueArn);
 
 
         console.log("All resources created successfully!");
