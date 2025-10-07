@@ -1,4 +1,4 @@
-name: Deploy AWS Infra
+name: Deploy AWS Infra for Application
 on:
   push:
     branches:
