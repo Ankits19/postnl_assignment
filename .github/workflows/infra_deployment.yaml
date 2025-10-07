@@ -32,4 +32,4 @@ jobs:
       - name: Deploy Infra
         working-directory: ./infra
         run: |
-          npx ts-node infra/index.ts
+          npx ts-node index.ts
