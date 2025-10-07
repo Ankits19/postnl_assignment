@@ -32,4 +32,4 @@ jobs:
       - name: Deploy Infra
         working-directory: ./infra
         run: |
-          node --loader ts-node/esm index.ts
+          npx ts-node infra/index.ts
