@@ -33,6 +33,8 @@ jobs:
       - name: Deploy Infra
         run: |
           pwd
-          npx ts-node infra/index.ts
+          npx ts-node index.ts
+        working-directory: infra
+
         
 
