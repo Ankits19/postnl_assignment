@@ -19,8 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
-        working-directory: infra
+          cd infra && npm install
         
 
       - name: Configure AWS credentials
