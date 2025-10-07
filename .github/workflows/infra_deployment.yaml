@@ -31,4 +31,4 @@ jobs:
 
       - name: Deploy Infra
         run: |
-          node dist/infra/index.js
+          node infra/index.js
