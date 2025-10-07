@@ -36,7 +36,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-
+##JS ignore files
 node_modules
 node_modules/*
 package-lock.json
