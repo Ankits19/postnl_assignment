@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - feature/task_assignment
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   deploy_infra_sdk:
