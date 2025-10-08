@@ -57,8 +57,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ vars.AWS_REGION }}
       
-      -name: Zip Lambda code
-       run: | 
+      - name: Zip Lambda code
+        run: | 
           cd infra/terraform_resources/lambda
           zip -r lambda.zip lambda_function.py
 
