@@ -54,6 +54,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ vars.AWS_REGION }}
 
+      - name: list content
+        working-directory: terraform_resources
+        run: |
+          pwd
+          ls
+
       - name: Terraform Init
         working-directory: terraform_resources
         run: terraform init
