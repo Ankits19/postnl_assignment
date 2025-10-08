@@ -12,14 +12,12 @@ export async function createLambdaRole(roleName: string, queueArn: string): Prom
             Action: "sts:AssumeRole"
         }]
     });
-
-    // Create the IAM role
+    
     const roleResponse = await iamClient.send(new CreateRoleCommand({
         RoleName: roleName,
         AssumeRolePolicyDocument: assumeRolePolicy
     }));
 
-    // Inline policy for SQS send + CloudWatch Logs
     const inlinePolicy = JSON.stringify({
         Version: "2012-10-17",
         Statement: [
@@ -36,6 +34,13 @@ export async function createLambdaRole(roleName: string, queueArn: string): Prom
                     "logs:CreateLogGroup",
                     "logs:CreateLogStream",
                     "logs:PutLogEvents"
+                ],
+                Resource: "*"
+            },
+            {
+                Effect: "Allow",
+                Action: [
+                    "sns:Publish"
                 ],
                 Resource: "*"
             }
