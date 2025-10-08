@@ -59,13 +59,14 @@ jobs:
 
       - name: Terraform Init
         run: |
-          pwd
           cd infra/terraform_resources && terraform init
 
       - name: Terraform Plan
-        run: terraform plan
+        run: |
+          cd infra/terraform_resources && terraform plan
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: |
+          cd infra/terraform_resources && terraform apply -auto-approve
 
     
