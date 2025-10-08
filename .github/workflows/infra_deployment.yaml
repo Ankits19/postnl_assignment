@@ -55,15 +55,13 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Terraform Init
-        working-directory: infra/terraform_resources
-        run: terraform init
+        run: |
+          cd infra/terraform_resources && terraform init
 
       - name: Terraform Plan
-        working-directory: infra/terraform_resources
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: infra/terraform_resources
         run: terraform apply -auto-approve
 
     
